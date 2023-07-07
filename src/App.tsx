@@ -4,6 +4,7 @@ import "./App.css";
 import InputField from "./components/InputField";
 
 import { Todo } from "./model";
+import TodoList from "./components/TodoList";
 
 const App: React.FC = () => {
   const [todo, setTodo] = useState<string>("");
@@ -20,7 +21,7 @@ const App: React.FC = () => {
       ]);
       setTodo("");
     }
-    // console.log(todos);
+    console.log(todos);
   };
 
   return (
@@ -31,6 +32,8 @@ const App: React.FC = () => {
         setTodo={setTodo}
         handleAddTodos={handleAddTodos}
       />
+
+     <TodoList todos={todos} setTodos={setTodos}/>
     </div>
   );
 };
